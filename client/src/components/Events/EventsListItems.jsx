@@ -8,7 +8,7 @@ export const EventsListItems = props => (
     <div id={`collapse${props.href}`} className="collapse" data-parent="#accordionEvents">
       <div className="card-body">
         <p><div className="eventsListItemsSubtitle">Description:</div> {props.description}</p>
-        <div><div className="eventsListItemsSubtitle">Starting Date:</div> {moment(props.date).format("MMM Do, YYYY")} {props.eventTime}</div>
+        <div><div className="eventsListItemsSubtitle">Starting Date:</div> {moment(props.date).format("MMM Do, YYYY")} {moment(props.eventTime, 'HH:mm').format('hh:mm a')}</div>
 
         <div id="goToEventBtn">
           <button className="btn"><a href={`/eventdetail/${props.href}`}>Go to Event</a></button>

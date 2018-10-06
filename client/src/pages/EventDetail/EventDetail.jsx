@@ -12,6 +12,7 @@ import PeopleJoined from '../../components/EventDetail/PeopleJoined/PeopleJoined
 import PeopleJoinedItem from "../../components/EventDetail/PeopleJoined/PeopleJoinedItem";
 import Geocode from "react-geocode";
 import "./EventDetail.css";
+import moment from 'moment';
 
 
 class EventDetail extends Component {
@@ -194,7 +195,7 @@ getGeocode = () => {
 
                     <div className="row justify-content-center">
                         <div className="col-sm-auto">
-                            <EventDescription description={this.state.description} eventDate={this.state.date} eventTime={this.state.time} createdBy={this.titleCase(this.state.eventCreator)} />
+                            <EventDescription description={this.state.description} eventDate={this.state.date} eventTime={moment(this.state.time, 'HH:mm').format('hh:mm a')} createdBy={this.titleCase(this.state.eventCreator)} />
                         </div>
                     </div>
 
